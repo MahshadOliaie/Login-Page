@@ -3,6 +3,9 @@ import PhoneNumberInput from '../PhoneNumberInput/PhoneNumberInput';
 import SubmitBtn from '../SubmitBtn/SubmitBtn';
 import './phoneNumber.css'
 import DATA from '../../DATA';
+import CodePage from '../CodePage/CodePage';
+import React from 'react'
+import ReactDOM from 'react-dom/client'
 
 function PhoneNumber() {
     const [inputValue, setInputValue] = useState("")
@@ -20,9 +23,13 @@ function PhoneNumber() {
             setSubmitState("notActive")
     }
 
-    function sub() {
-        DATA.push(inputValue)
-        console.log(DATA)
+    function submit() {
+        DATA.push(`+98${inputValue}`)
+        ReactDOM.createRoot(document.getElementById('root')).render(
+            <React.StrictMode>
+              <CodePage/>
+            </React.StrictMode>,
+        )
     }
 
     return (
@@ -31,7 +38,7 @@ function PhoneNumber() {
             <h1 className='title'>Login</h1>
             <form className='form'>
                 <PhoneNumberInput value={inputValue} onChange={checkNumber} />
-                <SubmitBtn content={"Send Code"} onClick={sub} state={submitState} />
+                <SubmitBtn content={"Send Code"} onClick={submit} state={submitState} />
                 <p className='goToSignUp'>Create an account</p>
             </form>
         </div>

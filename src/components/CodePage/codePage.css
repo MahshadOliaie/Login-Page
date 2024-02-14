@@ -45,3 +45,8 @@
     transform: scale(1.05);
     transition: 400ms;
 }
+
+.number{
+    margin: 0;
+    opacity: .7;
+}
