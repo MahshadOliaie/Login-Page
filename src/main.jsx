@@ -6,6 +6,6 @@ import CodePage from './components/CodePage/CodePage'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <CodePage/>
+    <PhoneNumber/>
   </React.StrictMode>,
 )
