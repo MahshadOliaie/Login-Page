@@ -1,3 +1,5 @@
+import PhoneNumberInput from '../PhoneNumberInput/PhoneNumberInput';
+import SubmitBtn from '../SubmitBtn/SubmitBtn';
 import './phoneNumber.css'
 
 function PhoneNumber() {
@@ -6,14 +8,8 @@ function PhoneNumber() {
         <div className="container">
             <h1 className='title'>Login</h1>
             <form className='form'>
-                <div className="phoneNumber">
-                    <select name="prefix" id="prefix">
-                        <option value="iran">+98</option>
-                    </select>
-                    <input type="text" id='phoneNumber' placeholder='Phone Number' maxLength={10} />
-                </div>
-                <button className='submit'>Send Code</button>
-
+                <PhoneNumberInput />
+                <SubmitBtn content={"Send Code"}/>
                 <p className='goToSignUp'>Create an account</p>
             </form>
         </div>

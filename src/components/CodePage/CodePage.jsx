@@ -1,3 +1,5 @@
+import SubmitBtn from '../SubmitBtn/SubmitBtn'
+import Timer from './Timer'
 import './codePage.css'
 
 function CodePage() {
@@ -7,9 +9,9 @@ function CodePage() {
             <form className='form'>
                 <div className="codeInput">
                     <input type="text" className="otp" id='otp' placeholder="code" maxLength={7} />
-                    <p className="timer">02:00</p>
+                    <Timer/>
                 </div>
-                <button className='submit'>Done</button>
+                <SubmitBtn content={"Done"}/>
             </form>
             <p className="editPhoneNumber">Wrong Number?</p>
         </div>
