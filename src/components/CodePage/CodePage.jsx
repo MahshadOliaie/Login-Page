@@ -44,7 +44,7 @@ function CodePage() {
     function checkCode() {
         event.preventDefault()
         if (inputCode == OTP) {
-            setWarning("loged in !!!")
+            setWarning("success")
         }
 
         if (inputCode == "")
@@ -60,18 +60,21 @@ function CodePage() {
     }
 
     return (
-        <div className="container">
-            <h1 className='title'>Enter Code</h1>
-            <form className='form'>
-                <p className="number">{DATA[0]}</p>
-                <div className="codeInput">
-                    <CodeInput getCode={(inputCode) => updateInputCode(inputCode)} />
-                    <Timer expire={expireFn} />
-                    <p className="warning">{warning}</p>
-                </div>
-                {(expire) ? <SubmitBtn content={"Resend Code"} onClick={remount} /> : <SubmitBtn content={"Done"} onClick={checkCode} />}
-            </form>
-            <p className="editPhoneNumber" onClick={numberPage}>Wrong Number?</p>
+        <div className={(warning == "success")? "container success" : "container"}>
+            {(warning == "success") ? <p>loged in</p> :
+                <>
+                    <h1 className='title'>Enter Code</h1>
+                    <form className='form'>
+                        <p className="number">{DATA[0]}</p>
+                        <div className="codeInput">
+                            <CodeInput getCode={(inputCode) => updateInputCode(inputCode)} />
+                            <Timer expire={expireFn} />
+                            <p className="warning">{warning}</p>
+                        </div>
+                        {(expire) ? <SubmitBtn content={"Resend Code"} onClick={remount} /> : <SubmitBtn content={"Done"} onClick={checkCode} />}
+                    </form>
+                    <p className="editPhoneNumber" onClick={numberPage}>Wrong Number?</p>
+                </>}
         </div>
     )
 }
