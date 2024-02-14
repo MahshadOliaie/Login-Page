@@ -26,9 +26,7 @@ function PhoneNumber() {
     function submit() {
         DATA.push(`+98${inputValue}`)
         ReactDOM.createRoot(document.getElementById('root')).render(
-            <React.StrictMode>
               <CodePage/>
-            </React.StrictMode>,
         )
     }
 

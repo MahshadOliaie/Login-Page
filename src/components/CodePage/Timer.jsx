@@ -1,7 +1,7 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState, React } from "react"
 
 
-function Timer() {
+function Timer({ expire }) {
     const [time, setTime] = useState(120)
 
     useEffect(() => {
@@ -15,8 +15,12 @@ function Timer() {
         return () => { clearTimeout(timer) }
     }, [time])
 
+    if (time == 0) {
+        expire()
+    }
+
     return (
-        <p className="timer">0{(Math.floor(time / 60))}:{(Math.ceil(time % 60)<10)? "0":""}{Math.ceil(time % 60)}</p>
+        <p className="timer">0{(Math.floor(time / 60))}:{(Math.ceil(time % 60) < 10) ? "0" : ""}{Math.ceil(time % 60)}</p>
     )
 }
 

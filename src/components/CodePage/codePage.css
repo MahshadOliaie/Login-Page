@@ -50,3 +50,9 @@
     margin: 0;
     opacity: .7;
 }
+
+.warning{
+    margin: 0;
+    margin-bottom: -10px;
+    color: rgb(167, 0, 0);
+}
