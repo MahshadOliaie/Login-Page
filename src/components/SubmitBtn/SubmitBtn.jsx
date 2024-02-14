@@ -1,8 +1,8 @@
 import './submitBtn.css'
 
-function SubmitBtn({content}){
+function SubmitBtn({content , state , onClick}){
     return(
-        <button className='submit'>{content}</button>
+        <p className='submit' id={state} onClick={onClick}>{content}</p>
     )
 }
 
