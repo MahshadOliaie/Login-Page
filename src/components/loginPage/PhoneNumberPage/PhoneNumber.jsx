@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import PhoneNumberInput from '../PhoneNumberInput/PhoneNumberInput';
 import SubmitBtn from '../SubmitBtn/SubmitBtn';
-import './phoneNumber.css'
+import CSS from './phoneNumber.module.css'
 import DATA from '../../../DATA';
 import CodePage from '../../CodePage/CodePage';
 import React from 'react'
@@ -33,12 +33,12 @@ function PhoneNumber() {
 
     return (
 
-        <div className="container">
-            <h1 className='title'>Login</h1>
-            <form className='form'>
+        <div className={CSS.container}>
+            <h1 className={CSS.title}>Login</h1>
+            <form className={CSS.form}>
                 <PhoneNumberInput value={inputValue} onChange={checkNumber} />
                 <SubmitBtn content={"Send Code"} onClick={submit} state={submitState} />
-                <p className='goToSignUp'>Create an account</p>
+                <p className={CSS.goToSignUp}>Create an account</p>
             </form>
         </div>
 

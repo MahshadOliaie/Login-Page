@@ -1,13 +1,13 @@
 
-import './phoneNumberInput.css'
+import CSS from './phoneNumberInput.module.css'
 
 function PhoneNumberInput({value , onChange}) {
     return (
-        <div className="phoneNumber">
-            <select name="prefix" id="prefix">
+        <div className={CSS.phoneNumber}>
+            <select name="prefix" id={CSS["prefix"]}>
                 <option value="iran">+98</option>
             </select>
-            <input type="text" id='phoneNumber' value={value} placeholder='Phone Number' maxLength={10} onChange={onChange} />
+            <input type="text" id={CSS["phoneNumber"]} value={value} placeholder='Phone Number' maxLength={10} onChange={onChange} />
         </div>
     )
 }

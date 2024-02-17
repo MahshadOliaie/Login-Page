@@ -1,4 +1,5 @@
 import { useEffect, useState, React } from "react"
+import CSS from './codePage.module.css'
 
 
 function Timer({ expire }) {
@@ -20,7 +21,7 @@ function Timer({ expire }) {
     }
 
     return (
-        <p className="timer">0{(Math.floor(time / 60))}:{(Math.ceil(time % 60) < 10) ? "0" : ""}{Math.ceil(time % 60)}</p>
+        <p className={CSS.timer}>0{(Math.floor(time / 60))}:{(Math.ceil(time % 60) < 10) ? "0" : ""}{Math.ceil(time % 60)}</p>
     )
 }
 

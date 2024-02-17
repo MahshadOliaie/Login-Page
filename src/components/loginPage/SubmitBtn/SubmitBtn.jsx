@@ -1,8 +1,8 @@
-import './submitBtn.css'
+import CSS from './submitBtn.module.css'
 
 function SubmitBtn({content , state , onClick}){
     return(
-        <p className='submit' id={state} onClick={onClick}>{content}</p>
+        <p className={CSS.submit} id={CSS[state]} onClick={onClick}>{content}</p>
     )
 }
 
