@@ -1,15 +1,16 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import PhoneNumberInput from '../PhoneNumberInput/PhoneNumberInput';
 import SubmitBtn from '../SubmitBtn/SubmitBtn';
 import CSS from './phoneNumber.module.css'
-import DATA from '../../../DATA';
 import CodePage from '../../CodePage/CodePage';
 import React from 'react'
 import ReactDOM from 'react-dom/client'
+import PhoneNumberContext from '../../../assets/context/PhoneNumberContext';
 
 function PhoneNumber() {
     const [inputValue, setInputValue] = useState("")
     const [submitState, setSubmitState] = useState("notActive")
+    const {numberSetter} = useContext(PhoneNumberContext)
 
     function checkNumber() {
         let value = event.target.value
@@ -25,7 +26,7 @@ function PhoneNumber() {
 
     function submit() {
         event.preventDefault()
-        DATA.push(`+98${inputValue}`)
+        numberSetter(`+98${inputValue}`)
         ReactDOM.createRoot(document.getElementById('root')).render(
             <CodePage />
         )

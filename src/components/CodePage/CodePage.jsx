@@ -1,10 +1,11 @@
-import DATA from '../../DATA'
+
+import PhoneNumberContext from '../../assets/context/PhoneNumberContext'
 import PhoneNumber from '../loginPage/PhoneNumberPage/PhoneNumber'
 import SubmitBtn from '../loginPage/SubmitBtn/SubmitBtn'
 import CodeInput from './CodeInput'
 import Timer from './Timer'
 import CSS from './codePage.module.css'
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import ReactDOM from 'react-dom/client'
 
 function CodePage() {
@@ -12,6 +13,7 @@ function CodePage() {
     const [expire, setExpire] = useState(false)
     const [inputCode, setInputCode] = useState("")
     const [warning, setWarning] = useState("")
+    const {number} = useContext(PhoneNumberContext)
 
     useEffect(() => {
         let otp = Math.floor((Math.random() * 1000000) + 10000)
@@ -65,7 +67,7 @@ function CodePage() {
                 <>
                     <h1 className={CSS.title}>Enter Code</h1>
                     <form className={CSS.form}>
-                        <p className={CSS.number}>{DATA[0]}</p>
+                        <p className={CSS.number}>{number}</p>
                         <div className={CSS.codeInput}>
                             <CodeInput getCode={(inputCode) => updateInputCode(inputCode)} />
                             <Timer expire={expireFn} />
