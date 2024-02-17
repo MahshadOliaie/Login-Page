@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import PhoneNumber from './components/PhoneNumberPage/PhoneNumber'
 import './index.css'
+import PhoneNumber from './components/loginPage/PhoneNumberPage/PhoneNumber'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>

@@ -13,7 +13,7 @@ function PhoneNumber() {
 
     function checkNumber() {
         let value = event.target.value
-        if ((value.match(/^\d{1,}$/)) || value == "") {
+        if (((value.match(/^\d{1,}$/)) && value.startsWith("9")) || value == "") {
             setInputValue(value)
         }
         if (value.length == 10) {
@@ -24,9 +24,10 @@ function PhoneNumber() {
     }
 
     function submit() {
+        event.preventDefault()
         DATA.push(`+98${inputValue}`)
         ReactDOM.createRoot(document.getElementById('root')).render(
-              <CodePage/>
+            <CodePage />
         )
     }
 

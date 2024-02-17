@@ -1,5 +1,5 @@
 import DATA from '../../DATA'
-import PhoneNumber from '../PhoneNumberPage/PhoneNumber'
+import PhoneNumber from '../loginPage/PhoneNumberPage/PhoneNumber'
 import SubmitBtn from '../loginPage/SubmitBtn/SubmitBtn'
 import CodeInput from './CodeInput'
 import Timer from './Timer'
@@ -25,7 +25,7 @@ function CodePage() {
     function numberPage() {
         ReactDOM.createRoot(document.getElementById('root')).render(
             <React.StrictMode>
-                <PhoneNumber />
+                <PhoneNumber/>
             </React.StrictMode>,
         )
     }
