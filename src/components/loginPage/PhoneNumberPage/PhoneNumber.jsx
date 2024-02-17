@@ -2,8 +2,8 @@ import { useState } from 'react';
 import PhoneNumberInput from '../PhoneNumberInput/PhoneNumberInput';
 import SubmitBtn from '../SubmitBtn/SubmitBtn';
 import './phoneNumber.css'
-import DATA from '../../DATA';
-import CodePage from '../CodePage/CodePage';
+import DATA from '../../../DATA';
+import CodePage from '../../CodePage/CodePage';
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 

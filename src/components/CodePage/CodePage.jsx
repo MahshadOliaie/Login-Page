@@ -1,6 +1,6 @@
 import DATA from '../../DATA'
 import PhoneNumber from '../PhoneNumberPage/PhoneNumber'
-import SubmitBtn from '../SubmitBtn/SubmitBtn'
+import SubmitBtn from '../loginPage/SubmitBtn/SubmitBtn'
 import CodeInput from './CodeInput'
 import Timer from './Timer'
 import './codePage.css'
